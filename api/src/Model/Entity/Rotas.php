@@ -5,6 +5,7 @@ class Rotas
     private $id;
     private $origem;
     private $destino;
+    private $km;
     private $nome;
 
     /**
@@ -13,6 +14,22 @@ class Rotas
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getKm()
+    {
+        return $this->km;
+    }
+
+    /**
+     * @param mixed $km
+     */
+    public function setKm($km)
+    {
+        $this->km = $km;
     }
 
     /**
