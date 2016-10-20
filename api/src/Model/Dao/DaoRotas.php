@@ -1,7 +1,8 @@
 <?php
 
 namespace Model\Dao;
-use Model\Entity\Rotas;
+use PDO;
+use stdClass;
 
 class DaoRotas
 {
@@ -20,10 +21,11 @@ class DaoRotas
         try{
             $this->cn->beginTransaction();
 
-            $sql = "INSERT INTO rotas (origem,destino,nome) VALUES (:origem,:destino,:nome)";
+            $sql = "INSERT INTO rotas (origem,destino,km,nome) VALUES (:origem,:destino,:km,:nome)";
             $res = $this->cn->prepare($sql);
             $res->bindParam(":origem", $obj->getOrigem(), PDO::PARAM_STR);
             $res->bindParam(":destino", $obj->getDestino(), PDO::PARAM_STR);
+            $res->bindParam(":km", $obj->getKm(), PDO::PARAM_STR);
             $res->bindParam(":nome", $obj->getNome(), PDO::PARAM_STR);
 
             if($res->execute()){
