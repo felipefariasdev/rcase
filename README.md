@@ -17,6 +17,10 @@ Mapa mental: https://www.mindmeister.com/779180087/rcase-sistema-de-log-stica
 
 ```bash
 
-Com os mapas carregados o requisitante irá procurar o menor valor de entrega e seu caminho, para isso ele passará o mapa, nome do ponto de origem, nome do ponto de destino, autonomia ex (km/l) e o valor do litro do combustível ex R$ 2,50.
+Com os mapas carregados o requisitante irá procurar o menor valor de entrega e seu caminho.
+
+Para isso ele passará o mapa, nome do ponto de origem, nome do ponto de destino.
+
+Autonomia ex (km/l0) e o valor do litro do combustível ex R$ 2,50.
 
 ```
