@@ -2,6 +2,7 @@
 use Model\Dao\DaoRotas;
 use Model\Entity\Rotas;
 
+//insert padrão
 $app->post('/rotas/add', function ($request, $response, $args) {
     if($request->isPost()){
         try{
@@ -27,6 +28,7 @@ $app->post('/rotas/add', function ($request, $response, $args) {
     }
 });
 
+//insert em massa
 $app->get('/rotas/teste/add/{origem}/{destino}/{qtd_insert}', function ($request, $response, $args) {
 
     $qtd_insert = ($args["qtd_insert"]);
@@ -35,8 +37,6 @@ $app->get('/rotas/teste/add/{origem}/{destino}/{qtd_insert}', function ($request
 
     for($i=1;$i<=$qtd_insert;$i++){
         try{
-
-
             $km = ($i*10);
             $nome = "caminhos".$i;
 
@@ -49,7 +49,7 @@ $app->get('/rotas/teste/add/{origem}/{destino}/{qtd_insert}', function ($request
             $obj->setNome($nome);
 
             $dao = new DaoRotas();
-            echo $dao->add($obj);
+            return ($dao->getMenorCusto($obj));
 
         }catch (Exception $e){
             $data                   = new stdClass();
@@ -61,7 +61,32 @@ $app->get('/rotas/teste/add/{origem}/{destino}/{qtd_insert}', function ($request
     }
 });
 
+//capturar a rota com menor custo e também as outras opções de rotas
+$app->get('/rotas/menor_custo/{origem}/{destino}', function ($request, $response, $args) {
 
+
+    $origem = ($args["origem"]);
+    $destino = ($args["destino"]);
+
+        try{
+
+            $obj = new Rotas();
+
+            $obj->setOrigem($origem);
+            $obj->setDestino($destino);
+
+            $dao = new DaoRotas();
+            echo $dao->getMenorCusto($obj);
+
+        }catch (Exception $e){
+            $data                   = new stdClass();
+            $data->success          = false;
+            $data->error            = true;
+            $data->message          = $e->getMessage();
+            return json_encode($data);
+        }
+
+});
 
 $app->get('/', function ($request, $response, $args) {
     return $this->renderer->render($response, 'inicio.phtml', $args);
