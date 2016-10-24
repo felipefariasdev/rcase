@@ -49,7 +49,7 @@ $app->get('/rotas/teste/add/{origem}/{destino}/{qtd_insert}', function ($request
             $obj->setNome($nome);
 
             $dao = new DaoRotas();
-            return ($dao->getMenorCusto($obj));
+            return ($dao->add($obj));
 
         }catch (Exception $e){
             $data                   = new stdClass();
