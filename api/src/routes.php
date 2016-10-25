@@ -29,7 +29,7 @@ $app->post('/rotas/add', function ($request, $response, $args) {
 });
 
 //insert em massa
-$app->get('/rotas/teste/add/{origem}/{destino}/{qtd_insert}', function ($request, $response, $args) {
+$app->get('/rotas/massa/add/{origem}/{destino}/{qtd_insert}', function ($request, $response, $args) {
 
     $qtd_insert = ($args["qtd_insert"]);
     $origem = ($args["origem"]);
