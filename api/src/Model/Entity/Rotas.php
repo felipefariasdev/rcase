@@ -7,6 +7,23 @@ class Rotas
     private $destino;
     private $km;
     private $nome;
+    private $custo;
+
+    /**
+     * @param mixed $custo
+     */
+    public function setCusto($custo)
+    {
+        $this->custo = $custo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCusto()
+    {
+        return $this->custo;
+    }
 
     /**
      * @return mixed
