@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/angular.min.1.4.8.js"></script>
+    <script src="js/angular-locale_pt-br.js"></script>
+    <meta charset="UTF-8">
+    <title>Teste Rotas</title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <h1>Qual é o menor custo?</h1>
+
+    <p>origem: {{rotas.rota_menor_custo.origem}}</p>
+    <p>destino: {{rotas.rota_menor_custo.destino}}</p>
+    <p>km: {{rotas.rota_menor_custo.km}}</p>
+    <p>nome do caminho: {{rotas.rota_menor_custo.nome}}</p>
+    <p>custo: <strong>{{rotas.rota_menor_custo.custo | currency:'R$ '}}</strong></p>
+
+
+    <hr>
+
+    <h1>Outros caminhos?</h1>
+
+    <p ng-repeat="x in rotas.rotas_disponiveis.rotas_itens | orderBy:'custo'">
+        {{x.origem}}, {{x.destino}}, {{x.km}}, {{x.nome}}, {{x.custo | currency:'R$ '}}
+    </p>
+</div>
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http) {
+        $http.get("http://desenvolvedorphprj.com.br/rcase/api/rotas/menor_custo/RJ/MG")
+                .then(function(response) {
+                    $scope.rotas = response.data;
+                });
+    });
+</script>
+
+</body>
+</html>
