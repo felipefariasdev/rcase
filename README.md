@@ -3,6 +3,9 @@
 
 Mapa mental: https://www.mindmeister.com/779180087/rcase-sistema-de-log-stica
 
+Testes: http://desenvolvedorphprj.com.br/rcase/teste-angularjs/
+
+
 ## Sistema de entregas visando sempre o menor custo.
 
 
