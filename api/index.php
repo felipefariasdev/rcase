@@ -20,4 +20,5 @@ $config_db = require __DIR__ . '/src/config_db.php';
 require __DIR__ . '/src/connection.php';
 require __DIR__ . '/src/Model/Entity/Rotas.php';
 require __DIR__ . '/src/Model/Dao/DaoRotas.php';
+require __DIR__ . '/src/Model/Componentes/JsonEncodePrivate.php';
 $app->run();
