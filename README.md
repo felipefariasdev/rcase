@@ -50,12 +50,14 @@ Retorno:
   destino: É o local de destino
   km: Qtd de quilimetros 
   nome: Nome do caminho ex: pela linha amarela
+  custo: é o valor da rota sendo o menor custo
 
   - rotas_disponiveis (Existe a rota de menor custo, mas exite a opção se selecionar uma das outras rotas)
     origem: x
     destino: x
     km: x
     nome: x
+    custo: é o valor da rota
 
 
 
