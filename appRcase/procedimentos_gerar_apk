@@ -1,8 +1,11 @@
+Somente a primeira vez:
+
 ionic login (INFORME SEU LOGIN E SENHA)
-_______________________________________________
-alterar a versao 0.0.1
 ionic upload (ENVIA O APP PARA IONIC.IO)
+_______________________________________________
+alterar a versao 0.0.2
+
 ionic package build android
 ionic package list
-ionic package info 1
-ionic package download 1
+ionic package info 2
+ionic package download 2
