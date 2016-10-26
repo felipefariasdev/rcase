@@ -1,0 +1,45 @@
+<ion-view view-title="Adicionar nova rota">
+  <ion-content>
+
+    <form ng-submit="salvarNovaRota(rota);rota=''">
+
+    <div class="list">
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Origem {{rota.origem}}
+          </div>
+          <select ng-model="rota.origem">
+            <option>RJ</option>
+            <option>SP</option>
+            <option>MG</option>
+          </select>
+        </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Destino {{rota.destino}}
+        </div>
+        <select ng-model="rota.destino">
+          <option>RJ</option>
+          <option>SP</option>
+          <option>MG</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Distância em KM</span>
+        <input type="number" placeholder="Quantos KM de distância?" ng-model="rota.km" maxlength="10">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nome da rota</span>
+        <input type="text" placeholder="Qual é o nome da rota?" ng-model="rota.nome" maxlength="30">
+      </label>
+    </div>
+      <div ng-show="response.success">Salvo com sucesso!</div>
+    <div class="padding" ng-show="rota.origem && rota.destino && rota.km && rota.nome">
+      <button class="button button-block button-stable"><strong><span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span> SALVAR</strong></button>
+    </div>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,50 @@
+<ion-view view-title="ROTAS">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Origem {{encontrar.origem}}
+        </div>
+        <select ng-model="encontrar.origem">
+          <option>RJ</option>
+          <option>SP</option>
+          <option>MG</option>
+        </select>
+      </label>
+    </div>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Destino {{encontrar.destino}}
+        </div>
+        <select ng-model="encontrar.destino" ng-change="encontrarCaminho(encontrar)">
+          <option>RJ</option>
+          <option>SP</option>
+          <option>MG</option>
+        </select>
+      </label>
+    </div>
+
+
+<div ng-show="rotas">
+      <ul class="list">
+
+        <li class="item" style="background-color: rgba(239, 103, 47, 0.61)!important">Menor custo: <strong>{{rotas.rota_menor_custo.custo | currency:'R$ '}}</strong></li>
+        <li class="item">origem: {{rotas.rota_menor_custo.origem}}</li>
+        <li class="item">destino: {{rotas.rota_menor_custo.destino}}</li>
+        <li class="item">km: {{rotas.rota_menor_custo.km}}</li>
+        <li class="item">nome do caminho: {{rotas.rota_menor_custo.nome}}</li>
+      </ul>
+
+
+
+
+        <ul class="list">
+          <li class="item" style="background-color: rgba(239, 103, 47, 0.25)!important">Outros caminhos</li>
+          <li class="item" ng-repeat="x in rotas.rotas_disponiveis.rotas_itens | orderBy:'custo'">
+            {{x.origem}}, {{x.destino}}, {{x.km}}, {{x.nome}}, {{x.custo | currency:'R$ '}}
+          </li>
+        </ul>
+</div>
+  </ion-content>
+</ion-view>
