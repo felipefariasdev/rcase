@@ -5,6 +5,10 @@ Mapa mental: https://www.mindmeister.com/779180087/rcase-sistema-de-log-stica
 
 Testes: http://desenvolvedorphprj.com.br/rcase/teste-angularjs/
 
+Download App Android: http://desenvolvedorphprj.com.br/rcase/appRcase/appRcase.apk
+
+Ionic App: http://desenvolvedorphprj.com.br/rcase/appRcase/www
+
 
 ## Sistema de entregas visando sempre o menor custo.
 
